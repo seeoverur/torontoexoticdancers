@@ -1,0 +1,733 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>6ix Gentlemen | Toronto Male Entertainment Booking Agency</title>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,600;1,9..144,500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#161213;
+    --charcoal:#201b1c;
+    --charcoal-2:#2a2325;
+    --brass:#c9a35e;
+    --brass-bright:#e3c07f;
+    --plum:#5b1f2e;
+    --plum-bright:#7e2c40;
+    --cream:#f2ead9;
+    --cream-dim:#cfc3ab;
+  }
+  *{box-sizing:border-box;}
+  body{
+    background:var(--ink);
+    color:var(--cream);
+    font-family:'Manrope',sans-serif;
+    font-weight:400;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3,.display-font{
+    font-family:'Fraunces',serif;
+    letter-spacing:-0.01em;
+  }
+  a{text-decoration:none;}
+  .brand-mark{
+    font-family:'Fraunces',serif;
+    font-weight:600;
+    font-style:italic;
+    font-size:1.5rem;
+    color:var(--cream);
+  }
+  .brand-mark span{color:var(--brass-bright);}
+
+  /* NAV */
+  .navbar-custom{
+    background:rgba(22,18,19,0.92);
+    backdrop-filter:blur(6px);
+    padding:1rem 0;
+    border-bottom:1px solid rgba(201,163,94,0.18);
+  }
+  .navbar-custom .nav-link{
+    color:var(--cream-dim);
+    font-weight:600;
+    font-size:0.85rem;
+    letter-spacing:0.03em;
+    margin:0 0.65rem;
+    transition:color .2s ease;
+  }
+  .navbar-custom .nav-link:hover{color:var(--brass-bright);}
+  .btn-brass{
+    background:var(--brass);
+    color:var(--ink);
+    font-weight:700;
+    border:none;
+    padding:0.6rem 1.4rem;
+    border-radius:2px;
+    transition:background .2s ease, transform .2s ease;
+  }
+  .btn-brass:hover{background:var(--brass-bright); color:var(--ink); transform:translateY(-1px);}
+  .btn-outline-cream{
+    border:1px solid rgba(242,234,217,0.4);
+    color:var(--cream);
+    padding:0.6rem 1.4rem;
+    border-radius:2px;
+    font-weight:600;
+    transition:all .2s ease;
+  }
+  .btn-outline-cream:hover{border-color:var(--brass-bright); color:var(--brass-bright);}
+
+  /* HERO */
+  .hero{
+    position:relative;
+    min-height:92vh;
+    display:flex;
+    align-items:center;
+    background:
+      radial-gradient(ellipse 60% 50% at 75% 20%, rgba(126,44,64,0.35), transparent 60%),
+      radial-gradient(ellipse 50% 40% at 15% 85%, rgba(201,163,94,0.12), transparent 60%),
+      linear-gradient(180deg, #161213 0%, #201b1c 60%, #161213 100%);
+    overflow:hidden;
+    border-bottom:1px solid rgba(201,163,94,0.18);
+  }
+  .hero::before{
+    content:"";
+    position:absolute; inset:0;
+    background-image:
+      repeating-linear-gradient(115deg, rgba(255,255,255,0.015) 0px, rgba(255,255,255,0.015) 1px, transparent 1px, transparent 3px);
+    pointer-events:none;
+  }
+  .hero-eyebrow{
+    color:var(--brass-bright);
+    font-weight:700;
+    font-size:0.8rem;
+    letter-spacing:0.14em;
+  }
+  .hero h1{
+    font-size:clamp(2.6rem, 5.2vw, 4.6rem);
+    font-weight:500;
+    line-height:1.04;
+    color:var(--cream);
+  }
+  .hero h1 em{
+    font-style:italic;
+    color:var(--brass-bright);
+  }
+  .hero p.lede{
+    font-size:1.15rem;
+    color:var(--cream-dim);
+    max-width:34rem;
+    line-height:1.6;
+  }
+  .hero-phone{
+    font-family:'Fraunces',serif;
+    font-size:1.4rem;
+    color:var(--cream);
+  }
+  .hero-phone a{color:var(--brass-bright); font-weight:600;}
+  .hero-badge-row{
+    display:flex; gap:2rem; flex-wrap:wrap;
+    margin-top:2.5rem;
+    padding-top:1.75rem;
+    border-top:1px solid rgba(242,234,217,0.12);
+  }
+  .hero-badge-row .num{
+    font-family:'Fraunces',serif;
+    font-size:1.9rem;
+    color:var(--brass-bright);
+    font-weight:600;
+  }
+  .hero-badge-row .lbl{
+    font-size:0.78rem;
+    color:var(--cream-dim);
+    text-transform:uppercase;
+    letter-spacing:0.06em;
+  }
+
+  /* section label */
+  .section-tag{
+    color:var(--brass);
+    font-weight:700;
+    font-size:0.78rem;
+    letter-spacing:0.1em;
+    text-transform:uppercase;
+  }
+  section{padding:5.5rem 0;}
+  .section-title{
+    font-size:clamp(1.9rem, 3vw, 2.6rem);
+    font-weight:500;
+    color:var(--cream);
+    max-width:38rem;
+  }
+  .section-sub{
+    color:var(--cream-dim);
+    max-width:32rem;
+    line-height:1.65;
+  }
+
+  /* EVENT CARDS */
+  .event-card{
+    background:linear-gradient(165deg, var(--charcoal-2), var(--charcoal));
+    border:1px solid rgba(201,163,94,0.16);
+    padding:2.2rem 1.8rem;
+    height:100%;
+    position:relative;
+    transition:border-color .25s ease, transform .25s ease;
+  }
+  .event-card:hover{border-color:rgba(201,163,94,0.55); transform:translateY(-4px);}
+  .event-card .glyph{
+    width:52px; height:52px;
+    display:flex; align-items:center; justify-content:center;
+    border:1px solid rgba(201,163,94,0.4);
+    border-radius:50%;
+    color:var(--brass-bright);
+    font-size:1.3rem;
+    margin-bottom:1.4rem;
+  }
+  .event-card h3{
+    font-size:1.25rem;
+    color:var(--cream);
+    margin-bottom:0.6rem;
+  }
+  .event-card p{
+    color:var(--cream-dim);
+    font-size:0.95rem;
+    line-height:1.6;
+    margin-bottom:0;
+  }
+
+  /* HOW IT WORKS */
+  .how-strip{
+    background:var(--charcoal);
+    border-top:1px solid rgba(201,163,94,0.14);
+    border-bottom:1px solid rgba(201,163,94,0.14);
+  }
+  .how-step{
+    display:flex;
+    gap:1.4rem;
+  }
+  .how-step .idx{
+    font-family:'Fraunces',serif;
+    font-style:italic;
+    font-size:1.6rem;
+    color:var(--brass);
+    min-width:2.2rem;
+  }
+  .how-step h4{color:var(--cream); font-size:1.1rem; margin-bottom:0.4rem;}
+  .how-step p{color:var(--cream-dim); font-size:0.93rem; line-height:1.6; margin-bottom:0;}
+
+  /* ENTERTAINERS */
+  .talent-card{
+    background:linear-gradient(200deg, var(--plum-bright) 0%, var(--plum) 45%, var(--charcoal) 100%);
+    border:1px solid rgba(201,163,94,0.25);
+    aspect-ratio:3/4;
+    position:relative;
+    overflow:hidden;
+    display:flex;
+    align-items:flex-end;
+    padding:1.3rem;
+  }
+  .talent-card .monogram{
+    position:absolute;
+    top:1.2rem; left:1.3rem;
+    font-family:'Fraunces',serif;
+    font-style:italic;
+    font-size:3rem;
+    color:rgba(242,234,217,0.14);
+  }
+  .talent-card .talent-meta{position:relative; z-index:2;}
+  .talent-card .talent-meta .name{
+    font-family:'Fraunces',serif;
+    color:var(--cream);
+    font-size:1.2rem;
+  }
+  .talent-card .talent-meta .tag{
+    color:var(--brass-bright);
+    font-size:0.78rem;
+    letter-spacing:0.05em;
+    text-transform:uppercase;
+  }
+  .talent-card::after{
+    content:"";
+    position:absolute; inset:0;
+    background:linear-gradient(0deg, rgba(20,16,17,0.85) 0%, transparent 55%);
+  }
+
+  /* TESTIMONIALS */
+  .testimonial-panel{
+    background:radial-gradient(ellipse 80% 100% at 50% 0%, rgba(126,44,64,0.28), transparent 70%), var(--ink);
+    border-top:1px solid rgba(201,163,94,0.14);
+  }
+  .quote-mark{
+    font-family:'Fraunces',serif;
+    font-size:4rem;
+    color:var(--brass);
+    line-height:1;
+    opacity:0.6;
+  }
+  .testimonial-text{
+    font-family:'Fraunces',serif;
+    font-size:1.5rem;
+    font-style:italic;
+    color:var(--cream);
+    line-height:1.5;
+    max-width:42rem;
+  }
+  .testimonial-name{
+    color:var(--brass-bright);
+    font-weight:600;
+    margin-top:1.2rem;
+  }
+  .carousel-control-prev-icon, .carousel-control-next-icon{
+    filter:invert(1) grayscale(1);
+    background-color:rgba(242,234,217,0.08);
+    border-radius:50%;
+    padding:1.1rem;
+  }
+
+  /* COVERAGE */
+  .coverage{
+    background:var(--charcoal);
+  }
+  .coverage-city{
+    display:inline-block;
+    color:var(--cream-dim);
+    font-size:0.92rem;
+    padding:0.3rem 0;
+    border-bottom:1px dotted transparent;
+  }
+  .coverage-list{
+    columns:3;
+    column-gap:2rem;
+  }
+  @media (max-width:768px){ .coverage-list{columns:2;} }
+
+  /* CTA / SIGNUP */
+  .signup-panel{
+    background:linear-gradient(120deg, var(--plum), var(--charcoal-2));
+    border:1px solid rgba(201,163,94,0.25);
+    padding:3rem;
+  }
+  .form-control-dark{
+    background:rgba(22,18,19,0.55);
+    border:1px solid rgba(242,234,217,0.25);
+    color:var(--cream);
+    padding:0.7rem 0.9rem;
+    border-radius:2px;
+  }
+  .form-control-dark:focus{
+    background:rgba(22,18,19,0.75);
+    border-color:var(--brass-bright);
+    box-shadow:none;
+    color:var(--cream);
+  }
+  .form-control-dark::placeholder{color:rgba(242,234,217,0.35);}
+  label.small-label{
+    font-size:0.78rem;
+    text-transform:uppercase;
+    letter-spacing:0.06em;
+    color:var(--cream-dim);
+    margin-bottom:0.35rem;
+    display:block;
+  }
+
+  /* FOOTER */
+  footer{
+    background:var(--ink);
+    border-top:1px solid rgba(201,163,94,0.16);
+    padding:3.5rem 0 1.5rem;
+  }
+  footer h5{
+    color:var(--cream);
+    font-family:'Fraunces',serif;
+    font-size:1rem;
+    margin-bottom:1rem;
+  }
+  footer a.footer-link{
+    color:var(--cream-dim);
+    display:block;
+    margin-bottom:0.55rem;
+    font-size:0.92rem;
+  }
+  footer a.footer-link:hover{color:var(--brass-bright);}
+  .social-row a{
+    width:38px; height:38px;
+    display:inline-flex; align-items:center; justify-content:center;
+    border:1px solid rgba(242,234,217,0.25);
+    border-radius:50%;
+    color:var(--cream);
+    margin-right:0.6rem;
+    transition:all .2s ease;
+  }
+  .social-row a:hover{border-color:var(--brass-bright); color:var(--brass-bright);}
+  .fine-print{
+    color:rgba(242,234,217,0.4);
+    font-size:0.8rem;
+  }
+  .disclaimer-bar{
+    background:var(--charcoal);
+    border-top:1px solid rgba(201,163,94,0.14);
+    border-bottom:1px solid rgba(201,163,94,0.14);
+  }
+  .disclaimer-bar p{
+    color:var(--cream-dim);
+    font-size:0.88rem;
+    margin-bottom:0;
+    line-height:1.6;
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="navbar navbar-expand-lg navbar-custom fixed-top">
+  <div class="container">
+    <a class="brand-mark" href="#">6IX <span>GENTLEMEN</span></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navContent" style="border-color:rgba(242,234,217,0.3);">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-end" id="navContent">
+      <ul class="navbar-nav align-items-lg-center">
+        <li class="nav-item"><a class="nav-link" href="#events">Occasions</a></li>
+        <li class="nav-item"><a class="nav-link" href="#how">How It Works</a></li>
+        <li class="nav-item"><a class="nav-link" href="#talent">Entertainers</a></li>
+        <li class="nav-item"><a class="nav-link" href="#coverage">Service Area</a></li>
+        <li class="nav-item"><a class="nav-link" href="#book">Contact</a></li>
+        <li class="nav-item ms-lg-3 mt-2 mt-lg-0"><a class="btn btn-brass" href="tel:18775559466">Check Availability</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="container" style="padding-top:5rem;">
+    <div class="row align-items-center">
+      <div class="col-lg-7">
+        <div class="hero-eyebrow mb-3">TORONTO &amp; THE GTA · PRIVATE EVENT ENTERTAINMENT</div>
+        <h1>Book Toronto's <em>most requested</em> male entertainers for your night.</h1>
+        <p class="lede mt-4">6ix Gentlemen sends vetted, professional male performers to bachelorette parties, birthdays, divorce celebrations, and nights that just need a reason. One phone call and we handle the rest.</p>
+        <div class="d-flex flex-wrap gap-3 mt-4">
+          <a href="#book" class="btn btn-brass">Get a Quote</a>
+          <a href="#talent" class="btn btn-outline-cream">Meet the Roster</a>
+        </div>
+        <div class="hero-phone mt-4">Reserve now: <a href="tel:18775559466">1-877-555-9466</a></div>
+        <div class="hero-badge-row">
+          <div><div class="num">11+</div><div class="lbl">Years Booking the GTA</div></div>
+          <div><div class="num">30+</div><div class="lbl">Cities Served</div></div>
+          <div><div class="num">24/7</div><div class="lbl">Booking Line</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- OCCASIONS -->
+<section id="events">
+  <div class="container">
+    <div class="row mb-5">
+      <div class="col-lg-7">
+        <div class="section-tag mb-2">What We're Booked For</div>
+        <h2 class="section-title">A show for every reason to celebrate.</h2>
+        <p class="section-sub mt-3">Whatever's on the calendar, we match the right entertainer and format to the room.</p>
+      </div>
+    </div>
+    <div class="row g-4">
+      <div class="col-md-6 col-lg-3">
+        <div class="event-card">
+          <div class="glyph"><i class="fa-solid fa-champagne-glasses"></i></div>
+          <h3>Bachelorette</h3>
+          <p>The classic send-off. Custom routines, crowd games, and a guest of honor who won't stop talking about it.</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-3">
+        <div class="event-card">
+          <div class="glyph"><i class="fa-solid fa-cake-candles"></i></div>
+          <h3>Birthday</h3>
+          <p>Any milestone, any age group. We tailor the energy to your crowd, from playful to full production.</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-3">
+        <div class="event-card">
+          <div class="glyph"><i class="fa-solid fa-ring"></i></div>
+          <h3>Divorce &amp; Freedom Parties</h3>
+          <p>New chapter, new rules. Our "Newly Free" package is built for the friends who are helping you celebrate it.</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-3">
+        <div class="event-card">
+          <div class="glyph"><i class="fa-solid fa-martini-glass-citrus"></i></div>
+          <h3>Just Because</h3>
+          <p>Girls' night, a work event nobody will forget, or a Tuesday that needed to be better. No occasion required.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section id="how" class="how-strip">
+  <div class="container">
+    <div class="row mb-5">
+      <div class="col-lg-7">
+        <div class="section-tag mb-2">Booking, Simplified</div>
+        <h2 class="section-title">How a 6ix Gentlemen night comes together.</h2>
+      </div>
+    </div>
+    <div class="row g-4 g-lg-5">
+      <div class="col-md-4">
+        <div class="how-step">
+          <div class="idx">01</div>
+          <div>
+            <h4>Call or request a quote</h4>
+            <p>Tell us the date, city, and vibe. We'll walk you through packages and pricing on the spot.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="how-step">
+          <div class="idx">02</div>
+          <div>
+            <h4>We match your entertainer</h4>
+            <p>Based on your group size, venue, and requests, we confirm the right performer and format.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="how-step">
+          <div class="idx">03</div>
+          <div>
+            <h4>He arrives, you host the room</h4>
+            <p>A 30–60 minute show built around your guest of honor, with music and material handled for you.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ENTERTAINERS -->
+<section id="talent">
+  <div class="container">
+    <div class="row mb-5">
+      <div class="col-lg-7">
+        <div class="section-tag mb-2">The Roster</div>
+        <h2 class="section-title">This week's most-booked entertainers in the GTA.</h2>
+        <p class="section-sub mt-3">Every performer is vetted, insured, and briefed on your event before he arrives.</p>
+      </div>
+    </div>
+    <div class="row g-4">
+      <div class="col-6 col-lg-3">
+        <div class="talent-card">
+          <div class="monogram">D</div>
+          <div class="talent-meta">
+            <div class="tag">Toronto</div>
+            <div class="name">Dominic</div>
+          </div>
+        </div>
+      </div>
+      <div class="col-6 col-lg-3">
+        <div class="talent-card">
+          <div class="monogram">R</div>
+          <div class="talent-meta">
+            <div class="tag">Mississauga</div>
+            <div class="name">Rhys</div>
+          </div>
+        </div>
+      </div>
+      <div class="col-6 col-lg-3">
+        <div class="talent-card">
+          <div class="monogram">J</div>
+          <div class="talent-meta">
+            <div class="tag">Markham</div>
+            <div class="name">Julian</div>
+          </div>
+        </div>
+      </div>
+      <div class="col-6 col-lg-3">
+        <div class="talent-card">
+          <div class="monogram">K</div>
+          <div class="talent-meta">
+            <div class="tag">Hamilton</div>
+            <div class="name">Kai</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="text-center mt-5">
+      <a href="#book" class="btn btn-outline-cream">See the Full Roster</a>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="testimonial-panel">
+  <div class="container">
+    <div id="testimonialCarousel" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-inner text-center">
+        <div class="carousel-item active">
+          <div class="quote-mark">&ldquo;</div>
+          <p class="testimonial-text mx-auto">Booked Dominic for my sister's bachelorette with two days' notice. The coordinator was patient with all my questions and he showed up exactly on time and read the room perfectly.</p>
+          <div class="testimonial-name">— Priya, Toronto</div>
+        </div>
+        <div class="carousel-item">
+          <div class="quote-mark">&ldquo;</div>
+          <p class="testimonial-text mx-auto">I wanted my divorce party to actually feel like a celebration and not a pity party. 6ix Gentlemen got the tone exactly right and my whole group is still talking about it.</p>
+          <div class="testimonial-name">— Marisol, Oakville</div>
+        </div>
+        <div class="carousel-item">
+          <div class="quote-mark">&ldquo;</div>
+          <p class="testimonial-text mx-auto">We hired Kai for a 40th birthday and he handled a rowdy group of twelve women like a pro. Booking over the phone was easy and the price matched exactly what we were quoted.</p>
+          <div class="testimonial-name">— Angela, Hamilton</div>
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon"></span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon"></span>
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- COVERAGE -->
+<section id="coverage" class="coverage">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-5 mb-4 mb-lg-0">
+        <div class="section-tag mb-2">Where We Travel</div>
+        <h2 class="section-title">Based in Toronto. Booked across the entire GTA.</h2>
+        <p class="section-sub mt-3">Outside the areas listed? Call the booking line — we travel further for the right event, and we'll always tell you upfront if a travel fee applies.</p>
+        <a href="tel:18775559466" class="btn btn-brass mt-2">Call 1-877-555-9466</a>
+      </div>
+      <div class="col-lg-7">
+        <div class="coverage-list">
+          <span class="coverage-city d-block">Toronto</span>
+          <span class="coverage-city d-block">Mississauga</span>
+          <span class="coverage-city d-block">Brampton</span>
+          <span class="coverage-city d-block">Markham</span>
+          <span class="coverage-city d-block">Vaughan</span>
+          <span class="coverage-city d-block">Richmond Hill</span>
+          <span class="coverage-city d-block">Oakville</span>
+          <span class="coverage-city d-block">Burlington</span>
+          <span class="coverage-city d-block">Hamilton</span>
+          <span class="coverage-city d-block">Oshawa</span>
+          <span class="coverage-city d-block">Whitby</span>
+          <span class="coverage-city d-block">Ajax</span>
+          <span class="coverage-city d-block">Pickering</span>
+          <span class="coverage-city d-block">Barrie</span>
+          <span class="coverage-city d-block">Milton</span>
+          <span class="coverage-city d-block">Cambridge</span>
+          <span class="coverage-city d-block">Kitchener</span>
+          <span class="coverage-city d-block">Waterloo</span>
+          <span class="coverage-city d-block">Guelph</span>
+          <span class="coverage-city d-block">St. Catharines</span>
+          <span class="coverage-city d-block">Niagara Falls</span>
+          <span class="coverage-city d-block">Peterborough</span>
+          <span class="coverage-city d-block">North York</span>
+          <span class="coverage-city d-block">Scarborough</span>
+          <span class="coverage-city d-block">Etobicoke</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DISCLAIMER -->
+<div class="disclaimer-bar py-3">
+  <div class="container">
+    <p><i class="fa-solid fa-circle-info me-2" style="color:var(--brass);"></i>All performers are independent, insured entertainers 19+. Shows are choreographed dance performances intended for adult audiences. A valid ID and signed booking agreement are required for every event.</p>
+  </div>
+</div>
+
+<!-- SIGNUP / BOOK -->
+<section id="book">
+  <div class="container">
+    <div class="signup-panel">
+      <div class="row align-items-center g-5">
+        <div class="col-lg-5">
+          <div class="section-tag mb-2">Get on the Calendar</div>
+          <h2 class="section-title" style="color:var(--cream);">Tell us the date. We'll take it from there.</h2>
+          <p class="section-sub mt-3">Share a few details and a booking coordinator will follow up with availability and pricing — usually within the hour.</p>
+        </div>
+        <div class="col-lg-7">
+          <form class="row g-3" onsubmit="return false;">
+            <div class="col-md-6">
+              <label class="small-label">First Name</label>
+              <input type="text" class="form-control form-control-dark" placeholder="Jane">
+            </div>
+            <div class="col-md-6">
+              <label class="small-label">Last Name</label>
+              <input type="text" class="form-control form-control-dark" placeholder="Doe">
+            </div>
+            <div class="col-md-6">
+              <label class="small-label">Email Address *</label>
+              <input type="email" class="form-control form-control-dark" placeholder="you@email.com" required>
+            </div>
+            <div class="col-md-6">
+              <label class="small-label">Event Date</label>
+              <input type="date" class="form-control form-control-dark">
+            </div>
+            <div class="col-12">
+              <label class="small-label">Occasion</label>
+              <select class="form-control form-control-dark">
+                <option>Bachelorette Party</option>
+                <option>Birthday</option>
+                <option>Divorce / Freedom Party</option>
+                <option>Just Because</option>
+                <option>Other</option>
+              </select>
+            </div>
+            <div class="col-12 mt-4">
+              <button type="submit" class="btn btn-brass px-4">Request Availability</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="row g-4">
+      <div class="col-lg-4">
+        <a class="brand-mark" href="#">6IX <span>GENTLEMEN</span></a>
+        <p class="fine-print mt-3">Toronto's private-event booking agency for male entertainment. Serving the GTA and beyond since 2015.</p>
+        <div class="social-row mt-3">
+          <a href="#"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="#"><i class="fa-brands fa-tiktok"></i></a>
+          <a href="#"><i class="fa-solid fa-envelope"></i></a>
+        </div>
+      </div>
+      <div class="col-lg-2 col-6">
+        <h5>Explore</h5>
+        <a class="footer-link" href="#events">Occasions</a>
+        <a class="footer-link" href="#how">How It Works</a>
+        <a class="footer-link" href="#talent">Entertainers</a>
+        <a class="footer-link" href="#coverage">Service Area</a>
+      </div>
+      <div class="col-lg-2 col-6">
+        <h5>Company</h5>
+        <a class="footer-link" href="#">Contact</a>
+        <a class="footer-link" href="#">Careers</a>
+        <a class="footer-link" href="#">Privacy Policy</a>
+        <a class="footer-link" href="#">Terms of Use</a>
+      </div>
+      <div class="col-lg-4">
+        <h5>Booking Line</h5>
+        <p class="fine-print">Available 24/7 for last-minute requests.</p>
+        <div class="hero-phone" style="font-size:1.2rem;"><a href="tel:18775559466">1-877-555-9466</a></div>
+      </div>
+    </div>
+    <hr style="border-color:rgba(242,234,217,0.12); margin:2.5rem 0 1.5rem;">
+    <p class="fine-print mb-0">&copy; 2026 6ix Gentlemen Entertainment. All performers are independent contractors 19+. All rights reserved.</p>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
